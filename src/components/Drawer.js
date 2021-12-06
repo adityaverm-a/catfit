@@ -33,7 +33,7 @@ const Drawer = ({
                         {closeButton}
                     </div>
                 )}
-                <div className='drawerLink'>
+                <div className='drawerContainer'>
                     {children}
                 </div>
             </RcDrawer>

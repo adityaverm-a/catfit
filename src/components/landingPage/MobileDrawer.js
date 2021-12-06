@@ -23,19 +23,19 @@ const DrawerItems = [
 ]
 
 const MobileDrawer = () => {
-    const [isDrawerOpen, setIsDrawerOpen] = useState(true)
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
     return (
         <Drawer
             width='320px'
             drawerHandler={
-                <div className='handler'>
+                <div className='drawerHandler'>
                     <IoMdMenu size='32px' color='#10343D' />
                 </div>
             }
             open={isDrawerOpen}
             closeButton={<IoMdClose size='32px' color='#10343D'/>}
-            toggleHandler={() => setIsDrawerOpen((prevState) => !prevState)}
+            toggleHandler={() => setIsDrawerOpen((isDrawerOpen) => !isDrawerOpen)}
         >
             <Scrollbars autoHide>
                 <div className='drawerMenu'>
@@ -47,6 +47,7 @@ const MobileDrawer = () => {
                             smooth={true}
                             offset={-70}
                             duration={500}
+                            className='drawerLink'
                         >
                             {label}
                         </Link>
