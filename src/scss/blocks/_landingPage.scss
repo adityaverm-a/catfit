@@ -1,0 +1,202 @@
+.landingNav {
+     width: 100%;
+     padding: 1.2rem 1rem;
+     position: absolute;
+     top: 0;
+     left: 0;
+     background-color: transparent;
+     transition: all 0.4s ease;
+     @include keyframes(positionAnim) {
+          from {
+               position: fixed;
+               opacity: 1;
+          }
+          to {
+               position: absolute;
+               opacity: 1;
+               transition: all 0.4s ease;
+          }
+     }
+     @include animate(positionAnim, 0.4s, ease);
+
+     &.sticky {
+          position: fixed;
+          background-color: $white;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+          padding: 1rem 0;
+     }
+
+     .navContainer {
+          max-width: 1100px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: auto;
+     }
+
+     nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: $poppins;
+          font-size: 1.25rem;
+
+          .navLink {
+               font-weight: 400;
+               text-decoration: none;
+               padding: 0 1rem;
+               color: $dark_blue_primary;
+               display: none;
+
+               @media screen and (min-width: 996px) {
+                    display: block;
+               }
+          }
+
+          .navSignUpBtn {
+               display: none;
+
+               &.sticky {
+                    background-color: $light_green_primary;
+                    color: $white;
+               }
+
+               @media screen and (min-width: 468px) {
+                    display: block;
+               }
+               @media screen and (max-width: 996px) {
+                    margin-right: 1.5rem;
+               }
+          }
+     }
+}
+
+.drawerContainer {
+     min-width: 0px;
+     width: 320px;
+     height: 100%;
+     margin: 0;
+     background-color: $white;
+
+     .drawerLink {
+          width: 100%;
+          font-size: 1.2rem;
+          font-weight: 500;
+          font-family: $poppins;
+          text-decoration: none;
+          color: $dark_blue_primary;
+          cursor: pointer;
+          padding: 1rem 0;
+          border-bottom: 1px solid $light_blue_primary;
+          transition: all 0.25s;
+
+          &:hover {
+               color: $light_green_primary;
+          }
+     }
+
+     .drawerMenu {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 5rem 2rem 2rem;
+     }
+}
+
+.drawerHandler {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-shrink: 0;
+     width: 32px;
+
+     @media screen and (min-width: 996px) {
+          display: none;
+     }
+}
+
+.drawerCloseBtn {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: absolute;
+     top: 25px;
+     right: 30px;
+     z-index: 10000;
+     cursor: pointer;
+}
+
+.landingMain {
+     background: url(images/landing-bg.png) no-repeat;
+}
+
+.landingHero {
+     height: 95vh;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+
+     .heroCta {
+          display: flex;
+          flex-direction: column;
+          flex: 0.5;
+
+          h1 {
+               font-weight: 700;
+               font-size: 4rem;
+
+               @media screen and (max-width: 1080px) {
+                    font-size: 3.5rem;
+               }
+
+               @media screen and (max-width: 768px) {
+                    font-size: 2.5rem;
+               }
+          }
+
+          button {
+               font-size: 1.5rem;
+               padding: 1rem 1.25rem;
+          }
+
+          @media screen and (max-width: 1080px) {
+               flex: 0.5;
+          }
+
+          @media screen and (max-width: 768px) {
+               text-align: center;
+               flex: 0.4;
+          }
+     }
+
+     .heroGraphic {
+          flex: 0.5;
+          text-align: center;
+
+          .heroImage {
+               @media screen and (max-width: 768px) {
+                    width: 85%;
+               }
+          }
+
+          @media screen and (max-width: 1080px) {
+               flex: 0.4;
+          }
+
+          @media screen and (max-width: 768px) {
+               flex: 0.2;
+          }
+     }
+
+     @media screen and (max-width: 1080px) {
+          padding: 0 2em;
+     }
+
+     @media screen and (max-width: 768px) {
+          justify-content: center;
+          margin-top: 4em;
+          flex-direction: column-reverse;
+          padding: 0 1em;
+     }
+}

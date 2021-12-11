@@ -35,8 +35,8 @@ const Header = ({ className }) => {
                             {label}
                         </Link>
                     ))}
-                    <Link style={{ textDecoration: 'none' }} to='/signup'>
-                        <button className={cn('signUpBtn', className)}>
+                    <Link to='/signup'>
+                        <button className={cn('signUpBtn', 'navSignUpBtn', className)}>
                             Sign Up
                         </button>
                     </Link>
