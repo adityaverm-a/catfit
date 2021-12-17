@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CatCare from '../../images/cat-care.png'
 
-const Hero = () => {
+const Hero = ({ text, imgSrc, isLandingPage }) => {
     return (
         <div className='container landingHero'>
             <div className='landingHero__cta'>
-                <h1>Let us take care of your Cat</h1>
-                <Link to='/signup'>
+                <h1>{text}</h1>
+                <Link to={isLandingPage ? '/signup' : '/vet-signup'}>
                     <button className='primaryBtn'>
                         Sign Up Now
                     </button>
@@ -15,9 +14,9 @@ const Hero = () => {
             </div>
             <div className='landingHero__graphic'>
                 <img 
-                    src={CatCare} 
+                    src={imgSrc} 
                     className='heroImage'
-                    alt="Taking care of your Cat" 
+                    alt={text} 
                 />
             </div>
         </div>

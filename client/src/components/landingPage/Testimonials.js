@@ -30,7 +30,7 @@ const reviewData = [
 
 const Card = ({ data: { name, location, imgSrc, review } }) => (
     <div className='reviewCard'>
-        <img src={imgSrc} alt={`${name} photo`} />
+        <img src={imgSrc} alt={name} />
         <p>{review}</p>
         <div className='info'>
             <h6>{name}</h6>

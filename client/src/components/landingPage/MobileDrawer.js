@@ -4,26 +4,26 @@ import { IoMdClose, IoMdMenu } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import Drawer from '../Drawer'
 
-const DrawerItems = [
-    {
-        id: 1,
-        label: 'Are you a Veterinarian?',
-        path: '/vet',
-    },
-    {
-        id: 2,
-        label: 'Login',
-        path: '/login',
-    },
-    {
-        id: 3,
-        label: 'Sign Up',
-        path: '/signup',
-    }
-]
-
-const MobileDrawer = () => {
+const MobileDrawer = ({ isLandingPage }) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+
+    const DrawerItems = [
+        {
+            id: 1,
+            label: isLandingPage ? 'Are you a Veterinarian?' : 'Home',
+            path: isLandingPage ? '/vet' : '/',
+        },
+        {
+            id: 2,
+            label: 'Login',
+            path: isLandingPage ? '/login' : '/vet-login',
+        },
+        {
+            id: 3,
+            label: 'Sign Up',
+            path: isLandingPage ? '/signup' : '/vet-signup',
+        }
+    ]
 
     return (
         <Drawer

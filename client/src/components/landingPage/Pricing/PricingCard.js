@@ -1,8 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
 import List from './List'
-import { FaRupeeSign } from 'react-icons/fa'
-
 
 const PricingCard = ({
     data: {

@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom'
 import LogoSrc from '../../images/catfitLogo.svg'
 import MobileDrawer from './MobileDrawer'
 
-const MenuItems = [
-    {
-        id: 1,
-        label: 'Are you a Veterinarian?',
-        path: '/vet',
-    },
-    {
-        id: 2,
-        label: 'Login',
-        path: '/login',
-    }
-]
+const Header = ({ className, isLandingPage }) => {
+    const MenuItems = [
+        {
+            id: 1,
+            label: isLandingPage ? 'Are you a Veterinarian?' : 'Home',
+            path: isLandingPage ? '/vet' : '/',
+        },
+        {
+            id: 2,
+            label: 'Login',
+            path: isLandingPage ? '/login' : '/vet-login',
+        }
+    ]
 
-const Header = ({ className }) => {
     return (
         <header id='landingHeader' className={cn(className, 'landingNav')}>
             <div className='navContainer'>
@@ -35,12 +35,12 @@ const Header = ({ className }) => {
                             {label}
                         </Link>
                     ))}
-                    <Link to='/signup'>
+                    <Link to={isLandingPage ? '/signup' : '/vet-signup'}>
                         <button className={cn(className === 'sticky' ?'secondaryBtn' : 'primaryBtn', 'navSignUpBtn')}>
                             Sign Up
                         </button>
                     </Link>
-                    <MobileDrawer />
+                    <MobileDrawer isLandingPage={isLandingPage} />
                 </nav>
             </div>
         </header>

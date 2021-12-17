@@ -12,6 +12,8 @@ import Services from './landingPage/Services';
 import Testimonials from './landingPage/Testimonials';
 import WhatWeDo from './landingPage/WhatWeDo';
 
+import CatCare from '../images/cat-care.png'
+
 const Landing = () => {
     const [isSticky, setIsSticky] = useState(false);
 
@@ -26,11 +28,18 @@ const Landing = () => {
     return (
         <>
             <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
-                <Header className={`${isSticky ? 'sticky' : 'unSticky'}`} />
+                <Header 
+                    isLandingPage='true'
+                    className={`${isSticky ? 'sticky' : 'unSticky'}`}  
+                />
             </Sticky> 
             <main className='landingMain'>
             
-                <Hero />
+                <Hero
+                    imgSrc={CatCare}
+                    isLandingPage='true'
+                    text='Let us take care of your Cat'
+                />
                 <WhatWeDo />
                 <HowItWorks />
                 <Assurance />

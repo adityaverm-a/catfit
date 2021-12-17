@@ -145,7 +145,6 @@
      flex-direction: row;
      justify-content: space-between;
      align-items: center;
-     margin-bottom: 4em;
 
      &__cta {
           display: flex;
@@ -264,7 +263,7 @@
 }
 
 .landingWWD {
-     margin-bottom: 4em;
+     margin: 4em 0;
 
      &__content {
           max-width: 800px;
@@ -907,7 +906,7 @@ footer {
      width: 100%;
      background-color: $light_green_primary;
      padding: 2em 0;
-     margin-bottom: 0 !important;
+     margin: 0 auto !important;
 
      .footer__content {
           max-width: 350px;
