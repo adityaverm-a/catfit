@@ -33,14 +33,14 @@ const PricingCard = ({
                 <div className='pricingBox__buttonGroup'>
                     <button
                         aria-label={buttonText}
-                        className='primary'
+                        className='secondaryBtn'
                     >
                         {buttonText}
                     </button>
                     {anotherOption && (
                         <button
                             aria-label={anotherOption}
-                            className='secondary'
+                            className='anotherOption'
                         >
                             {anotherOption}
                         </button>

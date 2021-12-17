@@ -171,7 +171,7 @@ export const data = {
         {
             id: 2,
             name: 'Consultation Plan',
-            description: 'For Basic Cat Consultations',
+            description: 'For Consultations',
             buttonText: 'Create Account',
             priceSrc: cpa,
             anotherOption: 'Or Start 14 Days free trail',
@@ -244,7 +244,7 @@ export const data = {
                 {
                     id: 5,
                     icon: <IoIosCheckmarkCircle />,
-                    text: 'Cat Parenting Management',
+                    text: 'Cat Parenting Tips',
                     isAvailable: true
                 },
             ]

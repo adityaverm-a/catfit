@@ -36,7 +36,7 @@ const Header = ({ className }) => {
                         </Link>
                     ))}
                     <Link to='/signup'>
-                        <button className={cn(className === 'sticky' ?'stickyNavBtn' : '', 'signUpBtn', 'navSignUpBtn')}>
+                        <button className={cn(className === 'sticky' ?'secondaryBtn' : 'primaryBtn', 'navSignUpBtn')}>
                             Sign Up
                         </button>
                     </Link>

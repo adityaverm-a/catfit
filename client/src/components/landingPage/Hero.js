@@ -8,7 +8,7 @@ const Hero = () => {
             <div className='landingHero__cta'>
                 <h1>Let us take care of your Cat</h1>
                 <Link to='/signup'>
-                    <button className='signUpBtn'>
+                    <button className='primaryBtn'>
                         Sign Up Now
                     </button>
                 </Link>

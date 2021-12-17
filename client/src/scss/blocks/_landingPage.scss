@@ -155,7 +155,7 @@
           h1 {
                font-weight: 700;
                font-size: 3.5rem;
-               margin-bottom: 2em;
+               margin-bottom: 0.75em;
 
                @media screen and (max-width: 1080px) {
                     font-size: 3.25rem;
@@ -509,6 +509,14 @@
                }
           }
 
+          &__graphic {
+               img {
+                    @media screen and (max-width: 600px) {
+                         width: 85vw;
+                    }
+               }
+          }
+
           @media screen and (max-width: 1080px) {
                flex-direction: column-reverse;
           }
@@ -586,7 +594,7 @@
           &__pricingItem {
                margin: 2em;
                display: flex;
-               flex-shrink: 0;
+               flex-shrink: 0 !important;
                flex: 1 1 auto;
 
                .pricingBox {
@@ -627,7 +635,7 @@
                          font-weight: 700;
                          font-size: 0.9rem;
                          line-height: 1.2;
-                         // letter-spacing: -0.14px;
+                         letter-spacing: 0.8px;
                          display: flex;
                          justify-content: center;
                          align-items: center;
@@ -638,7 +646,7 @@
                     &__pricingHeader {
                          justify-content: space-between;
                          align-items: flex-start;
-                         margin-bottom: 2.5em;
+                         margin-bottom: 1.25em;
 
                          h4 {
                               margin-bottom: 0.5em;
@@ -653,7 +661,7 @@
 
                     .package__listing {
                          list-style: none;
-                         margin-bottom: 2.5em;
+                         margin-bottom: 1.25em;
 
                          &__listItem {
                               font-family: $raleway;
@@ -695,20 +703,39 @@
                          display: flex;
                          align-items: center;
                          justify-content: center;
+                         margin-bottom: 1.25em;
 
                          span {
                               padding-left: 0.25em;
                               padding-top: 0.6em;
+                              font-weight: 500;
                          }
                     }
 
                     &__buttonGroup {
-                         .primary {
-                         }
+                         text-align: center;
 
-                         .secondary {
+                         button {
+                              display: block;
+                              margin: 1em auto 0;
+                              font-size: 1.1rem;
+
+                              &.anotherOption {
+                                   border: none;
+                                   color: $light_blue_primary;
+                                   font-size: 1rem;
+                                   background-color: transparent;
+                                   cursor: pointer;
+                              }
                          }
                     }
+               }
+
+               @media screen and (max-width: 640px) {
+                    margin: 1em;
+               }
+               @media screen and (max-width: 475px) {
+                    margin: 0.5em;
                }
           }
 
@@ -744,6 +771,10 @@
                > ul > li {
                     display: flex;
                }
+
+               @media screen and (max-width: 639px) {
+                    padding: 1em 0 0 0;
+               }
           }
 
           .button__group {
@@ -777,10 +808,106 @@
      }
 }
 
+.testimonials {
+     background-color: $light_blueish_white;
+     padding: 4em 0;
+     width: 100%;
+
+     &__content {
+          max-width: 1100px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          h3 {
+               font-size: 2.75rem;
+               font-weight: 700;
+               text-align: center;
+               margin-bottom: 0.25em;
+
+               @media screen and (max-width: 768px) {
+                    font-size: 1.75rem;
+               }
+          }
+
+          h5 {
+               font-family: $raleway;
+               font-size: 1.2rem;
+               font-weight: 500;
+               text-align: center;
+               color: $dark_blue_secondary;
+               margin-bottom: 0.25em;
+
+               @media screen and (max-width: 768px) {
+                    font-size: 1rem;
+               }
+          }
+
+          &__reviews {
+               width: 100%;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               margin-top: 2em;
+
+               .reviewCard {
+                    width: 300px;
+                    height: 300px;
+                    padding: 2em;
+                    background-color: $white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: 16px;
+                    text-align: center;
+
+                    img {
+                         width: 90px;
+                    }
+
+                    .info {
+                         h6 {
+                              font-weight: 700;
+                              font-size: 1.2rem;
+                         }
+                    }
+
+                    @media screen and (max-width: 1080px) {
+                         margin-bottom: 1em;
+                    }
+               }
+
+               @media screen and (max-width: 1080px) {
+                    flex-direction: column;
+               }
+          }
+     }
+}
+
+.tbd {
+     text-align: center;
+     margin: 2em;
+
+     h3 {
+          font-size: 2.75rem;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 0.25em;
+
+          @media screen and (max-width: 768px) {
+               font-size: 1.75rem;
+          }
+     }
+}
+
 footer {
      width: 100%;
      background-color: $light_green_primary;
      padding: 2em 0;
+     margin-bottom: 0 !important;
 
      .footer__content {
           max-width: 350px;

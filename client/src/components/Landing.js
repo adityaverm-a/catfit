@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Sticky from 'react-stickynode'
+import { Link } from 'react-router-dom';
 
 import Assurance from './landingPage/Assurance';
 import Footer from './landingPage/Footer';
@@ -8,6 +9,7 @@ import Hero from './landingPage/Hero';
 import HowItWorks from './landingPage/HowItWorks';
 import Pricing from './landingPage/Pricing/Pricing';
 import Services from './landingPage/Services';
+import Testimonials from './landingPage/Testimonials';
 import WhatWeDo from './landingPage/WhatWeDo';
 
 const Landing = () => {
@@ -34,6 +36,13 @@ const Landing = () => {
                 <Assurance />
                 <Services />
                 <Pricing />
+                <Testimonials />
+                <div className='tbd'>
+                    <h3>Make your Cat Healthy and Fit</h3>
+                    <Link to='/signup'>
+                        <button className='secondaryBtn'>Sign Up Now</button>
+                    </Link>
+                </div>
             </main>
             <Footer />
         </>
