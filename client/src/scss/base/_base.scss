@@ -27,6 +27,11 @@ p {
      color: $dark_blue_secondary;
 }
 
+.toast p {
+     font-family: $poppins;
+     color: $white;
+}
+
 a {
      text-decoration: none;
 }
@@ -34,6 +39,11 @@ a {
 button {
      font-family: $poppins;
      font-weight: 600;
+}
+
+.wrapper {
+     height: 100vh;
+     display: flex;
 }
 
 .container {

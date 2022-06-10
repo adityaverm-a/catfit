@@ -20,7 +20,7 @@ const reviewData = [
         review: `“My hooman is really dumb, but he made the right choice by getting help from cat.fit.”`
     },
     {
-        id: 2,
+        id: 3,
         name: 'Bella',
         location: 'Bangalore, India',
         imgSrc: BellaImg,

@@ -133,10 +133,16 @@
 
 .landingMain {
      background: url(images/landing-bg.png) no-repeat;
+     // background-size: 100% 719px;
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
+
+     // @media screen and (max-width: 996px) {
+     //      background: url(images/landing-bg-sm.png)
+     //           no-repeat;
+     // }
 }
 
 .landingHero {
@@ -179,7 +185,7 @@
                flex: 0.5;
           }
 
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 996px) {
                text-align: center;
                flex: 0.4;
           }
@@ -204,7 +210,7 @@
           }
      }
 
-     @media screen and (max-width: 768px) {
+     @media screen and (max-width: 996px) {
           justify-content: center;
           margin-top: 4em;
           flex-direction: column-reverse;
@@ -567,7 +573,7 @@
                     font-size: 1rem;
                     font-weight: 600;
                     cursor: pointer;
-                    transition: all 1.5s;
+                    transition: all 0.5s;
                     line-height: 1.2;
 
                     &.active {
@@ -675,9 +681,9 @@
 
                               &.closed {
                                    opacity: 0.7;
-                                   button {
-                                        // color: #788fb5;
-                                   }
+                                   // button {
+                                   //      color: #788fb5;
+                                   // }
                               }
                               svg {
                                    font-size: 1.75rem;
@@ -886,7 +892,7 @@
      }
 }
 
-.tbd {
+.newsletter {
      text-align: center;
      margin: 2em;
 
@@ -894,10 +900,91 @@
           font-size: 2.75rem;
           font-weight: 700;
           text-align: center;
-          margin-bottom: 0.25em;
+          margin-bottom: 1.25em;
 
           @media screen and (max-width: 768px) {
                font-size: 1.75rem;
+          }
+     }
+
+     &-wrapper {
+          display: flex;
+          justify-content: center;
+
+          &__form {
+               display: flex;
+               .form-group {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-bottom: 1em;
+                    padding: 0 0.5em;
+
+                    label {
+                         font-family: $poppins;
+                         color: $dark_blue_primary;
+                         font-weight: 500;
+                         font-size: 1.2rem;
+                         margin-left: 0.25em;
+                         margin-bottom: 0.2em;
+
+                         @media screen and (max-width: 1080px) {
+                              font-size: 1rem;
+                         }
+
+                         @media screen and (max-width: 900px) {
+                              font-size: 0.85rem;
+                         }
+                    }
+
+                    input {
+                         font-size: 0.9rem;
+                    }
+
+                    .form-control {
+                         outline: none;
+                         padding: 1em;
+                         border: 2px solid
+                              $light_blue_primary;
+                         border-radius: 6px;
+                         //  box-shadow: ;
+                         width: 300px;
+
+                         &::placeholder {
+                              font-family: $raleway;
+                              color: $dark_blue_secondary;
+                              opacity: 0.6;
+                              font-weight: 500;
+                         }
+
+                         @media screen and (max-width: 600px) {
+                              margin-bottom: 0.75em;
+                         }
+                    }
+
+                    .is-invalid {
+                         border-color: $error_color;
+                    }
+
+                    .invalid-feedback {
+                         font-family: $raleway;
+                         color: $error_color;
+                         font-weight: 500;
+                         font-size: 0.8rem;
+                         margin-top: 0.5em;
+                         margin-left: 0.25em;
+                    }
+
+               }
+
+               @media screen and (max-width: 600px) {
+                    flex-direction: column;
+               }
+          }
+
+          @media screen and (max-width: 600px) {
+               flex-direction: column;
           }
      }
 }
