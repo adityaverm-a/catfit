@@ -1,24 +1,52 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toast'
 
-import Auth from './components/Auth'
-import Landing from './components/Landing'
-import RUAVet from './components/RUAVet'
+import setAuthToken from './utilis/setAuthToken'
+import Auth from './components/auth/Auth'
+import Landing from './components/landingPage/Landing'
+import RUAVet from './components/landingPage/RUAVet'
+import Dashboard from './components/dashboard'
+
+import { loadUser } from './actions/auth'
+import { Provider } from 'react-redux'
+import store from './store'
 
 import './styles.css'
+import Chat from './components/chat'
+
+
+if(localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
   return (
-    <Router>
-      <Routes>
-        <Route exact path='/' element={<Landing />} />
-        <Route exact path='/vet' element={<RUAVet />} />
-        <Route exact path='/login' element={<Auth />} />
-        <Route exact path='/signup' element={<Auth isSignUp='true' />} />
-        <Route exact path='/vet-login' element={<Auth isVetAuth='true' />} />
-        <Route exact path='/vet-signup' element={<Auth isSignUp='true' isVetAuth='true' />} />
-      </Routes>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/vet' component={RUAVet} />
+          <Route exact path='/login' component={Auth} />
+          <Route exact path='/signup'>
+            <Auth isSignUp='true' />
+          </Route>
+          <Route exact path='/vet-login'>
+            <Auth isSignUp='true' />
+          </Route>
+          <Route exact path='/vet-signup'>
+            <Auth isSignUp='true' isVetAuth='true' />
+          </Route>
+          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/chat' component={Chat} />
+          {/* <Route path="/*" element={<NotFound />} /> */}
+        </Switch>
+      </Router>
+      <ToastContainer position='top-right' />
+    </Provider>
   )
 }
 

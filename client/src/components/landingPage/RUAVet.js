@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Header from './landingPage/Header'
-import Hero from './landingPage/Hero'
+import Header from './Header'
+import Hero from './Hero'
 
-import RuaVet from '../images/ruaVet.svg'
-import Footer from './landingPage/Footer'
+import RuaVet from '../../images/ruaVet.svg'
+import Footer from './Footer'
 
 const RUAVet = () => {
     return (

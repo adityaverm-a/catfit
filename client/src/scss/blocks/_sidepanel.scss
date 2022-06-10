@@ -1,0 +1,83 @@
+.sidepanel {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     background-color: $dark_blue;
+     width: 240px;
+     padding-top: 2em;
+
+     .sidepanel-header {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          img {
+               width: 183px;
+          }
+
+          &::after {
+               background-color: $white;
+               content: '';
+               height: 0.08rem;
+               width: 183px;
+               margin-top: 1.5em;
+          }
+     }
+
+     &-logout {
+          margin: 2em 0;
+          text-align: center;
+
+          &__btn:hover {
+               background-color: $white !important;
+               color: $dark_blue_secondary !important;
+          }
+     }
+
+     &-promo {
+          margin: 0em 1.5em 2em;
+          padding: 1em 1em;
+          background-color: $white;
+          border-radius: 12px;
+          cursor: pointer;
+
+          h6 {
+               font-size: 1.5rem;
+               line-height: 2.5rem;
+               font-weight: 500;
+          }
+     }
+
+     &-options {
+          margin: 3.5em 0;
+
+          &__menu-item {
+               width: 200px;
+               height: 50px;
+               display: flex;
+               align-items: center;
+               border-top-right-radius: 16px;
+               border-bottom-right-radius: 16px;
+
+               p {
+                    padding-left: 2em;
+                    color: white;
+                    font-family: $poppins;
+                    font-size: 1.1rem;
+                    cursor: pointer;
+               }
+          }
+
+          .active {
+               background-color: $dark_blue_secondary;
+
+               p {
+                    font-size: 1.13rem;
+               }
+          }
+     }
+
+     // @media screen and (max-width: 960px) {
+     //      width: 100;
+     // }
+}

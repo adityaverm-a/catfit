@@ -1,0 +1,30 @@
+.dashboard-sidebar {
+     width: 70px;
+     height: 100%;
+     background: $dark_blue_secondary;
+     box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.25);
+     padding: 2.75em 0.8em 0.8em;
+
+     &__icon {
+          width: 45px;
+          height: 45px;
+          // margin: 14px;
+          background: $white;
+          border-radius: 9999px;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+          margin-bottom: 1.5em;
+
+          &-inner {
+               height: 100%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               cursor: pointer;
+          }
+     }
+
+     &__icons {
+          font-size: 24px;
+          color: $dark_blue_secondary;
+     }
+}
